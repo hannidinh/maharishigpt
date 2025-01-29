@@ -1,0 +1,191 @@
+* {
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("assets/bg.jpg");
+}
+
+main {
+    width: 80vw;
+    height: 80vh;
+    /* background: linear-gradient(to bottom, #f8f8f8, #cfcfcf); */
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    text-align: center;
+    color: #383838;
+}
+
+section {
+    width: 100%;
+    flex: 1;
+    /* Allows it to expand within the flex container */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    /* Enables vertical scrolling */
+    max-height: 60vh;
+    /* Adjust height to prevent overflow */
+    padding: 10px;
+}
+
+/* When there are messages, ensure it takes full height */
+section.populated {
+    height: 100%;
+    max-height: 60vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+
+.starter-text {
+    padding: 0 80px;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border-top: 2px solid #f6af64;
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input.question-box {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #f6af64;
+    border-radius: 8px;
+    color: #383838;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input.question-box:focus {
+    border-color: #f55e06;
+    box-shadow: 0 0 5px rgba(245, 94, 6, 0.5);
+}
+
+input[type=submit] {
+    width: 120px;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #f6af64;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type=submit]:hover {
+    background-color: #f55e06;
+    transform: scale(1.05);
+}
+
+input[type=submit]:active {
+    background-color: #d94e04;
+    transform: scale(0.95);
+}
+
+/* input:focus {
+    outline: none
+} */
+
+.loader {
+    margin: 10px;
+    width: 60px;
+    aspect-ratio: 4;
+    background:
+        no-repeat radial-gradient(circle closest-side, #383838 90%, #0000) 0 50%,
+        no-repeat radial-gradient(circle closest-side, #383838 90%, #0000) 50% 50%,
+        no-repeat radial-gradient(circle closest-side, #383838 90%, #0000) 100% 50%;
+    background-size: calc(100%/3) 100%;
+    animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+    33% {
+        background-size: calc(100%/3) 0, calc(100%/3) 100%, calc(100%/3) 100%;
+    }
+
+    50% {
+        background-size: calc(100%/3) 100%, calc(100%/3) 0, calc(100%/3) 100%;
+    }
+
+    100% {
+        background-size: calc(100%/3) 100%, calc(100%/3) 100%, calc(100%/3) 0;
+    }
+}
+
+.bubble {
+    margin: 8px;
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    color: #383838;
+    box-shadow: #959da533 0 8ox 24px;
+    width: 80%;
+    text-align: left;
+}
+
+.bubble.user {
+    border-radius: 20px 20px 0 20px;
+    background-color: #E1F4FFFF;
+    margin-left: auto;
+}
+
+.bubble.assistant {
+    border-radius: 20px 20px 20px 0;
+    background-color: #dce7ff;
+}
+
+.prompt-suggestion-button {
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: #f6af64;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.prompt-suggestion-button:hover {
+    background-color: #f55e06;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.footer a {
+    color: #f55e06;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
